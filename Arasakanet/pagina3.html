@@ -1,132 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>   
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/Arasaka" href="img/icon.jpg    ">
-        <title>Arasaka News.3</title> 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </head>
-    <body style="margin: 0; padding: 0; background-color: #000000;"></body>
-      <!-- Tabela principal de 100% de largura total para preencher qualquer monitor -->
-      <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width: 100%; min-height: 100vh; border-collapse: collapse;">
-        <tr>
-            <!-- Lateral Esquerda -->
-            <td valign="top" style="background-image: url('img/amareloesquerda.png'); background-repeat: repeat-y; background-size:100%; background-position: top right;">
-            </td>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/Arasaka" href="img/icon.jpg">
+    <title>Arasaka News.3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cyberp.css">
+</head>
+<body>
 
-            <!-- Parte Central: Travada exatamente em 1200px e alinhada ao centro -->
-            <td width="1200" align="center" valign="top" style="width: 1200px; min-width: 1200px;">
-                <table width="1200" cellspacing="0" cellpadding="0" border="0" style="width: 1200px; border-collapse: collapse;">
-                    
-                    <!-- 1. Imagem Principal -->
+    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="tabela-principal">
+        <tr>
+            <td valign="top" class="lateral lateral-esquerda"></td>
+
+            <td width="1200" align="center" valign="top" class="coluna-central">
+                <table width="1200" cellspacing="0" cellpadding="0" border="0" class="tabela-central">
+
                     <tr>
                         <td colspan="2" width="1200" height="400">
-                            <img src="img/aranewss.png" width="1200" height="400" alt="banner" style="display: block; width: 1200px; height: 400px; border: 0;">
+                            <img src="img/aranewss.png" width="1200" height="400" alt="banner" class="banner-principal">
                         </td>
                     </tr>
-                    
-                    <!-- 2. Parte Central Meio -->
+
                     <tr>
-                        <!-- Coluna do Menu (180px) -->
-                        <td valign="top" align="center" width="180" style="width: 180px; background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%); box-shadow: inset -1px 0 0 rgba(184,21,21,0.25);">
-                        <h2 style="color: #b81515; font-family: sans-serif; margin: 0; padding: 18px 0 12px 0; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 2px solid #b81515; text-shadow: 0 0 8px rgba(184,21,21,0.5);">
-                            MENU
-                             </h2>
+                        <td valign="top" align="center" width="180" class="coluna-menu">
+                            <h2 class="titulo-menu">MENU</h2>
+                            <nav class="nav-menu">
+                                <a href="index.html" class="link-menu">Home</a>
+                                <a href="site.html" class="link-menu">Pagina 1</a>
+                                <a href="pagina2.html" class="link-menu">Pagina 2</a>
+                                <a href="pagina3.html" class="link-menu">Pagina 3</a>
+                            </nav>
+                        </td>
 
-                                <nav style="padding-top: 8px;">
-                                 <a href="index.html" 
-                                 style="display: block; color: #e20e0e; text-decoration: none; padding: 12px 14px; font-family: sans-serif; font-size: 14px; letter-spacing: 0.5px; border-left: 3px solid transparent; transition: all 0.25s ease;"
-                                 onmouseover="this.style.backgroundColor='#141414'; this.style.color='#ffffff'; this.style.borderLeftColor='#e20e0e'; this.style.paddingLeft='18px';" 
-                                    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e20e0e'; this.style.borderLeftColor='transparent'; this.style.paddingLeft='14px';">
-                                Home
-                                </a>
-                                <a href="site.html" 
-                                style="display: block; color: #e20e0e; text-decoration: none; padding: 12px 14px; font-family: sans-serif; font-size: 14px; letter-spacing: 0.5px; border-left: 3px solid transparent; transition: all 0.25s ease;"
-                             onmouseover="this.style.backgroundColor='#141414'; this.style.color='#ffffff'; this.style.borderLeftColor='#e20e0e'; this.style.paddingLeft='18px';" 
-                                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e20e0e'; this.style.borderLeftColor='transparent'; this.style.paddingLeft='14px';">
-                                Pagina 1
-                                </a>
+                        <td valign="top" width="1020" class="coluna-conteudo">
+                            <h1 class="titulo-conteudo">!BREAKING NEWS!</h1>
+                            <p class="texto-conteudo">
+                                TENHAM CUIDADO! UM NOVO GRUPO DE RUNNERS ESTÃO ATIVOS NA CIDADE !
+                                <br><br> CONFIRAM AS GRAVAÇOES <br><br>
+                            </p>
 
-                                <a href="pagina2.html" 
-                                style="display: block; color: #e20e0e; text-decoration: none; padding: 12px 14px; font-family: sans-serif; font-size: 14px; letter-spacing: 0.5px; border-left: 3px solid transparent; transition: all 0.25s ease;"
-                                onmouseover="this.style.backgroundColor='#141414'; this.style.color='#ffffff'; this.style.borderLeftColor='#e20e0e'; this.style.paddingLeft='18px';" 
-                                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e20e0e'; this.style.borderLeftColor='transparent'; this.style.paddingLeft='14px';">
-                                Pagina 2
-                                </a>
-                                <a href="pagina3.html" 
-                                style="display: block; color: #e20e0e; text-decoration: none; padding: 12px 14px; font-family: sans-serif; font-size: 14px; letter-spacing: 0.5px; border-left: 3px solid transparent; transition: all 0.25s ease;"
-                                onmouseover="this.style.backgroundColor='#141414'; this.style.color='#ffffff'; this.style.borderLeftColor='#e20e0e'; this.style.paddingLeft='18px';" 
-                                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e20e0e'; this.style.borderLeftColor='transparent'; this.style.paddingLeft='14px';">
-                                Pagina 3
-                                </a>
-                                </nav>
-                                </td>
-
-                        <!-- Coluna do Conteúdo -->
-                        
-                            <td valign="top" width="1020" style="width: 1020px; background-color: #f1d453; padding: 20px; font-family: 'Rajdhani', sans-serif;">
-                            <h1 style="margin-top: 0; color: #1f1e1e;">!BREAKING NEWS!</h1>
-                            <p style="color: #000000;">TENHAM CUIDADO! UM NOVO GRUPO DE RUNNERS ESTÃO ATIVOS NA CIDADE !
-                                   <br><br> CONFIRAM AS GRAVAÇOES <br><br>
-                                
-
-                                </p>
-                                <div style="position: relative; width: 100%; max-width: 900px; padding-top: 50.625%; margin: 15px 0;">
+                            <div style="position: relative; width: 100%; max-width: 800px; padding-top: 50.625%; margin: 15px 0;">
                                 <iframe src="https://www.youtube.com/embed/SyeHKMfswHk" 
                                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 4px;"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                                 </iframe>
                                 </div>
-                                <h1 style="margin-top: 0; color: #1f1e1e;">Quem são eles?</h1>
-                                <h1 style="margin-top: 0; color: #1f1e1e;">Roman Carax</h1>
-                                    <img src="img/romann.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
-                                    <p style="color: #000000;">Obcecado em documentar a verdade, ele tem o costume de acompanhar a vida de outras pessoas como uma sombra. O problema é que ele logo descobre que, diferente de suas gravações favoritas, as histórias em Night City são brutais, bagunçadas e raramente têm um final feliz e limpo.
-                                </p>
-                                <h1 style="margin-top: 0; color: #1f1e1e;">Weak Kingsley</h1>
-                                    <img src="img/king3.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
-                                    <p style="color: #000000;">Antes conhecido como "King" (Rei), ele é um mercenário (edgerunner) veterano que já esteve no topo, mas que agora vive à sombra de sua antiga glória.  Com quase nenhum cromo restante, ele quer encontrar seu proposito.
-                                </p>
-                                
-                                <h1 style="margin-top: 0; color: #1f1e1e;">D edgerunner</h1>
-                            
-                                    <img src="img/D2.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
-                                    <p style="color: #000000;">Um netrunner da Nação Cobra (Snake Nation) com habilidades técnicas extremamente afiadas e uma fome ainda maior por vingança. Ele está caçando o assassino que exterminou o seu clã.
-                                </p>
-                                <h1 style="margin-top: 0; color: #1f1e1e;">Talia Yang</h1>
-                                    <img src="img/talia.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
-                                    <p style="color: #000000;">Ela tem um passado dividido: foi criada nas torres corporativas (Corpo), mas acabou sendo endurecida pelas garras da gangue Maelstrom. Ela é ferozmente independente e está profundamente mergulhada na cultura hiper-violenta e obcecada por implantes (cromo) da gangue
-                                </p>
 
+                            <h1 class="subtitulo-conteudo">Quem são eles?</h1>
 
-                                    <h1 style="margin-top: 0; color: #1f1e1e;">IRÃO MORRER</h1>
-                                <p style="color: #000000;">Após o fracasso do primeiro grupo de Edgerunners em destruir nossa corporação, estamos preparados para o segundo.
-                                   <br><br> <h1 style="margin-top: 0; color: #1f1e1e;">-NÓS DA ARASAKA IREMOS MATAR TODOS ELES-</h1> <br><br>
+                            <h1 class="subtitulo-conteudo">Roman Carax</h1>
+                            <img src="img/king3.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
+                            <p class="texto-conteudo">
+                                Obcecado em documentar a verdade, ele tem o costume de acompanhar a vida de outras pessoas como uma sombra. O problema é que ele logo descobre que, diferente de suas gravações favoritas, as histórias em Night City são brutais, bagunçadas e raramente têm um final feliz e limpo.
+                            </p>
 
+                            <h1 class="subtitulo-conteudo">Weak Kingsley</h1>
+                            <img src="img/king3.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
+                            <p class="texto-conteudo">
+                                Antes conhecido como "King" (Rei), ele é um mercenário (edgerunner) veterano que já esteve no topo, mas que agora vive à sombra de sua antiga glória. Com quase nenhum cromo restante, ele quer encontrar seu proposito.
+                            </p>
+
+                            <h1 class="subtitulo-conteudo">D edgerunner</h1>
+                            <img src="img/king3.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
+                            <p class="texto-conteudo">
+                                Um netrunner da Nação Cobra (Snake Nation) com habilidades técnicas extremamente afiadas e uma fome ainda maior por vingança. Ele está caçando o assassino que exterminou o seu clã.
+                            </p>
+
+                            <h1 class="subtitulo-conteudo">Talia Yang</h1>
+                            <img src="img/king3.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
+                            <p class="texto-conteudo">
+                                Ela tem um passado dividido: foi criada nas torres corporativas (Corpo), mas acabou sendo endurecida pelas garras da gangue Maelstrom. Ela é ferozmente independente e está profundamente mergulhada na cultura hiper-violenta e obcecada por implantes (cromo) da gangue.
+                            </p>
+
+                            <h1 class="subtitulo-conteudo">IRÃO MORRER</h1>
+                            <p class="texto-conteudo">
+                                Após o fracasso do primeiro grupo de Edgerunners em destruir nossa corporação, estamos preparados para o segundo.
+                                <br><br>
+                            </p>
+                            <h1 class="subtitulo-conteudo">-NÓS DA ARASAKA IREMOS MATAR TODOS ELES-</h1>
+                            <br><br>
                         </td>
                     </tr>
 
-                   <!-- 3. Rodapé -->
-                        <tr>
-                            <td colspan="2" width="1200" height="120" align="center" style="width: 1200px; height: 120px; background: linear-gradient(180deg, #eed80f 0%, #a38606 100%); border-top: 1px solid #1a3550; box-shadow: 0 -4px 12px rgba(0,0,0,0.35); font-family: sans-serif; color: #000000; font-size: 13px;">
-                            <p style="margin: 6px 0; letter-spacing: 0.5px;">&copy; 2026 Site da Arasaka. Todos os direitos reservados.</p>
-                            <p style="margin: 6px 0; color: #000000;">Arasaka é a marca registra por Saburo Arasaka, passada para filho Yorinobu Arasaka de forma atípica.</p>
-                            <p style="margin: 6px 0; color: #000000;">Desenvolvido apenas para fins lucrativos.</p>
-                            <p style="margin: 6px 0; color: #000000;">Feito por Mark Stembark.</p>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td colspan="2" width="1200" height="120" align="center" class="rodape">
+                            <p class="rodape-texto">&copy; 2026 Site da Arasaka. Todos os direitos reservados.</p>
+                            <p class="rodape-texto">Arasaka é a marca registra por Saburo Arasaka, passada para filho Yorinobu Arasaka de forma atípica.</p>
+                            <p class="rodape-texto">Desenvolvido apenas para fins lucrativos.</p>
+                            <p class="rodape-texto">Feito por Mark Stembark.</p>
+                        </td>
+                    </tr>
 
-                    </table>
-                </td>
-
-            <!-- Lateral Direita -->
-            <td valign="top" style="background-image: url('img/amarelodireita.png'); background-repeat: repeat-y; background-size:100%; background-position: top left;">
+                </table>
             </td>
+
+            <td valign="top" class="lateral lateral-direita"></td>
         </tr>
-      </table>
-    </body>
+    </table>
+
+</body>
 </html>

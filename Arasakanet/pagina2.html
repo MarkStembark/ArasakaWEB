@@ -1,122 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>   
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/Arasaka" href="img/icon.jpg    ">
-        <title>Arasaka News.2</title> 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body style="margin: 0; padding: 0; background-color: #000000;"></body>
-      <!-- Tabela principal de 100% de largura total para preencher qualquer monitor -->
-      <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width: 100%; min-height: 100vh; border-collapse: collapse;">
-        <tr>
-            <!-- Lateral Esquerda -->
-            <td valign="top" style="background-image: url('img/amareloesquerda.png'); background-repeat: repeat-y; background-size:100%; background-position: top right;">
-            </td>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/Arasaka" href="img/icon.jpg">
+    <title>Arasaka News.2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cyberp.css">
+</head>
+<body>
 
-            <!-- Parte Central: Travada exatamente em 1200px e alinhada ao centro -->
-            <td width="1200" align="center" valign="top" style="width: 1200px; min-width: 1200px;">
-                <table width="1200" cellspacing="0" cellpadding="0" border="0" style="width: 1200px; border-collapse: collapse;">
-                    
-                    <!-- 1. Imagem Principal -->
+    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="tabela-principal">
+        <tr>
+            <td valign="top" class="lateral lateral-esquerda"></td>
+
+            <td width="1200" align="center" valign="top" class="coluna-central">
+                <table width="1200" cellspacing="0" cellpadding="0" border="0" class="tabela-central">
+
                     <tr>
                         <td colspan="2" width="1200" height="400">
-                            <img src="img/aranewss.png" width="1200" height="400" alt="banner" style="display: block; width: 1200px; height: 400px; border: 0;">
+                            <img src="img/aranewss.png" width="1200" height="400" alt="banner" class="banner-principal">
                         </td>
                     </tr>
-                    
-                    <!-- 2. Parte Central Meio -->
+
                     <tr>
-                        <!-- Coluna do Menu (180px) -->
-                        <td valign="top" align="center" width="180" style="width: 180px; background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%); box-shadow: inset -1px 0 0 rgba(184,21,21,0.25);">
-                        <h2 style="color: #b81515; font-family: sans-serif; margin: 0; padding: 18px 0 12px 0; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 2px solid #b81515; text-shadow: 0 0 8px rgba(184,21,21,0.5);">
-                            MENU
-                             </h2>
+                        <td valign="top" align="center" width="180" class="coluna-menu">
+                            <h2 class="titulo-menu">MENU</h2>
+                            <nav class="nav-menu">
+                                <a href="index.html" class="link-menu">Home</a>
+                                <a href="site.html" class="link-menu">Pagina 1</a>
+                                <a href="pagina2.html" class="link-menu">Pagina 2</a>
+                                <a href="pagina3.html" class="link-menu">Pagina 3</a>
+                            </nav>
+                        </td>
 
-                                <nav style="padding-top: 8px;">
-                                 <a href="index.html" 
-                                 style="display: block; color: #e20e0e; text-decoration: none; padding: 12px 14px; font-family: sans-serif; font-size: 14px; letter-spacing: 0.5px; border-left: 3px solid transparent; transition: all 0.25s ease;"
-                                 onmouseover="this.style.backgroundColor='#141414'; this.style.color='#ffffff'; this.style.borderLeftColor='#e20e0e'; this.style.paddingLeft='18px';" 
-                                    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e20e0e'; this.style.borderLeftColor='transparent'; this.style.paddingLeft='14px';">
-                                Home
-                                </a>
-
-                                <a href="site.html" 
-                                style="display: block; color: #e20e0e; text-decoration: none; padding: 12px 14px; font-family: sans-serif; font-size: 14px; letter-spacing: 0.5px; border-left: 3px solid transparent; transition: all 0.25s ease;"
-                             onmouseover="this.style.backgroundColor='#141414'; this.style.color='#ffffff'; this.style.borderLeftColor='#e20e0e'; this.style.paddingLeft='18px';" 
-                                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e20e0e'; this.style.borderLeftColor='transparent'; this.style.paddingLeft='14px';">
-                                Pagina 1
-                                </a>
-
-                                <a href="pagina2.html" 
-                                style="display: block; color: #e20e0e; text-decoration: none; padding: 12px 14px; font-family: sans-serif; font-size: 14px; letter-spacing: 0.5px; border-left: 3px solid transparent; transition: all 0.25s ease;"
-                                onmouseover="this.style.backgroundColor='#141414'; this.style.color='#ffffff'; this.style.borderLeftColor='#e20e0e'; this.style.paddingLeft='18px';" 
-                                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e20e0e'; this.style.borderLeftColor='transparent'; this.style.paddingLeft='14px';">
-                                Pagina 2
-                                </a>
-                                <a href="pagina3.html" 
-                                style="display: block; color: #e20e0e; text-decoration: none; padding: 12px 14px; font-family: sans-serif; font-size: 14px; letter-spacing: 0.5px; border-left: 3px solid transparent; transition: all 0.25s ease;"
-                                onmouseover="this.style.backgroundColor='#141414'; this.style.color='#ffffff'; this.style.borderLeftColor='#e20e0e'; this.style.paddingLeft='18px';" 
-                                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e20e0e'; this.style.borderLeftColor='transparent'; this.style.paddingLeft='14px';">
-                                Pagina 3
-                                </a>
-                                </nav>
-                                </td>
-
-                        <!-- Coluna do Conteúdo -->
-                        
-                            <td valign="top" width="1020" style="width: 1020px; background-color: #f1d453; padding: 20px; font-family: 'Rajdhani', sans-serif;">
-                            <h1 style="margin-top: 0; color: #1f1e1e;">CONHEÇA SOBRE NOSSA HISTORIA!</h1>
-                            <p style="color: #000000;">História: Anos 1910 - 1950
-                                    Fábrica da Arasaka, Japão, 1920
+                        <td valign="top" width="1020" class="coluna-conteudo">
+                            <h1 class="titulo-conteudo">CONHEÇA SOBRE NOSSA HISTORIA!</h1>
+                            <p class="texto-conteudo">
+                                História: Anos 1910 - 1950
+                                Fábrica da Arasaka, Japão, 1920
                                 <br><br>
                                 A Corporação Arasaka foi fundada em 1915 por Sasai Arasaka em Chuo-ku, Tóquio, Japão. A empresa era originalmente focada em manufatura e tirou total proveito da Segunda Guerra Mundial para aumentar sua riqueza e poder, fornecendo suprimentos ao Exército Imperial. No entanto, Sasai previu a derrota do Japão e trabalhou para garantir que sua empresa e fortuna sobrevivessem à guerra, espalhando sua riqueza pelo mundo, fora do alcance da liderança do pós-guerra. Logo em seguida, os japoneses se renderam e o país ficou em ruínas, com a maioria das cidades destruídas pelos constantes bombardeios (com exceção de Kyoto).[4]
                                 <br>
                                 Em 15 de agosto de 1945, o Imperador transmitiu o decreto de rendição e renunciou à sua divindade. Saburo Arasaka, um ex-tenente da Marinha Imperial Japonesa e filho de Sasai, ficou atônito. Ele estava prestes a cometer seppuku (suicídio ritual) no bosque de cerejeiras do complexo hospitalar quando teve um momento de epifania e uma visão. Exatamente naquele momento, Saburo compreendeu a sabedoria das ações de seu pai. Como herdeiro da família, aquela fortuna logo seria sua para controlar — uma fortuna que, se manejada corretamente, permitiria a um homem inteligente impulsionar o Japão de volta a uma posição de poder, de onde poderia dominar o mundo política e economicamente. Os filhos de Amaterasu prevaleceriam; se não sob o Imperador, então sob outra divindade: o comércio. Saburo puxou a meia polegada da adaga que já havia penetrado seus músculos abdominais, antes que a visão detivesse sua mão, e retornou para casa. Naquela mesma noite, ele começou a estudar política, economia e história, estudos que continuaram até a morte de seu pai.
                                 <br>
                                 Embora a economia e a indústria do Japão estivessem em ruínas, Saburo estudou todos os assuntos relacionados a negócios, economia e política enquanto frequentava a Universidade de Tóquio (Todai). Isso foi feito para garantir que ele tivesse as habilidades necessárias para alcançar seus objetivos. Sasai havia lucrado com a indústria durante o tempo de guerra, mas, contrariando os apelos fervorosos de Saburo na época, ele garantiu que a maior parte da fortuna da Arasaka ficasse secretamente protegida em ativos e contas ocultas no exterior.[6]
-                                <br>                      
-                                
-                                </p>
-                                <img src="img/Arasaka_OldFactory.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
-                                 <p style="color: #000000;">História: 1960 - 1997<br><br>
+                                <br>
+                            </p>
+                            <img src="img/Arasaka_OldFactory.png" alt="descrição da imagem" class="imagem-conteudo">
+                            <p class="texto-conteudo">
+                                História: 1960 - 1997
+                                <br><br>
                                 Saburo Arasaka e membros do conselho, no escritório da Arasaka em Tóquio, Japão, 1960
-                                <br> 
+                                <br>
                                 Em 1960, Sasai Arasaka faleceu e Saburo, aos 41 anos, assumiu o lugar de seu falecido pai como chefe da Corporação Arasaka. Naquela época, a Arasaka ainda era uma empresa relativamente pequena, tendo acabado de se restabelecer no comércio internacional. Antes de sua morte, o pai de Saburo vinha recuperando lentamente o capital e os recursos mantidos em segredo durante a guerra e, após sua morte, o próprio Saburo continuou a tarefa.
-                                <br> 
+                                <br>
                                 A Criação da Segurança Arasaka e Ascensão Global:
-                                <br> 
+                                <br>
                                 Em 1970, Saburo criou a divisão de Segurança Arasaka da Corporação Arasaka. A nova divisão se especializou em mão de obra pessoal e corporativa de alta qualidade, além de proteção e segurança eletrônica e computacional.[6]
-                                <br> 
+                                <br>
                                 Lentamente, ao longo de 25 anos, a Segurança Arasaka desenvolveu uma reputação impecável como a empresa mais potente do seu tipo no mundo.
-                                <br> 
+                                <br>
                                 Em 1990, a Arasaka apareceu na lista Global 500. Em meados da década de 1990, guardas da empresa eram empregados por milhares de indivíduos e corporações poderosas ao redor do mundo, e os especialistas em segurança de computadores e contramedidas de intrusão da Arasaka eram contratados por muitos outros.
-                                <br> 
+                                <br>
                                 Não demorou muito para que a divisão de Segurança se tornasse uma das três holdings mais poderosas da Arasaka, igualada apenas pelo Banco Arasaka e pela Manufatura Arasaka.
-                                <br> 
-                                    O Colapso do Mercado e a Expansão:<br> 
+                                <br>
+                                O Colapso do Mercado e a Expansão:<br>
                                 A dedicação de Saburo aos seus estudos permitiu-lhe prever o colapso do mercado mundial de 1994 e o colapso dos EUA em 1996. Saburo foi capaz de tomar as medidas adequadas e, através de sua manipulação astuta e investimentos, fazer da Corporação Arasaka uma das poucas instituições comerciais a lucrar com a crise. A Arasaka já era grande antes da crise, mas no período subsequente assumiu uma estatura gigantesca, tornando-se uma das maiores Megacorporações do mundo, ocupando agora o segundo lugar na lista Global 500.
-                                <br> 
+                                <br>
                                 Em algum momento da década de 1990, o Grupo Europeu da Arasaka construiu sua sede europeia em Paris, França.[4]
-                                <br> 
+                                <br>
                                 Em 1997, a Segurança Arasaka entrou na área de contratos paramilitares e começou a treinar um dos primeiros exércitos corporativos do mundo em sua instalação de treinamento de guardas e agentes, localizada nos ermos proibidos do norte de Hokkaido.
-                                <br> 
+                                <br>
                                 Uma era de implacabilidade se seguiu, com a Arasaka destruindo ou absorvendo o máximo possível de sua concorrência e comprando quaisquer empresas não competitivas que Saburo achasse que seriam um bom ativo.
-                                <br> 
-                                Conflitos Políticos no Japão:<br> 
+                                <br>
+                                Conflitos Políticos no Japão:<br>
                                 O controle da Arasaka sobre o governo do Japão estava se tornando problemático no final da década de 1990. Saburo estava perto de ter controle total, com 60% da Dieta Nacional do Japão (o parlamento japonês) sendo composta por políticos comprados pela Arasaka.
-                                <br> 
+                                <br>
                                 No entanto, devido ao crescente medo entre outras corporações japonesas sobre a tentativa de tomada do governo pela Arasaka, um grupo foi formado por grandes e pequenas empresas que se uniram sob a bandeira da FACS (Esfera de Coprosperidade do Extremo Asiático). Isso contrabalançou o controle de Saburo sobre o governo e muitos políticos foram presos. A FACS continuaria a minar os planos da Arasaka nas décadas seguintes.[4]
-                           <br>         
-                                
-                                </p>
-                                <img src="img/Arasaka_board.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
-                                <p style="color: #000000;">História: 1997 - 2020<br><br>
+                                <br>
+                            </p>
+                            <img src="img/Arasaka_board.png" alt="descrição da imagem" class="imagem-conteudo">
+                            <p class="texto-conteudo">
+                                História: 1997 - 2020<br><br>
                                 Fábrica da Arasaka, 2000<br>
                                 <br>
                                 Os anos de 1997 a 2020, no entanto, viram a Corporação Arasaka continuar a se diversificar e se fortalecer. Seus principais braços operacionais ainda eram os grupos do Banco Arasaka, Manufatura e Segurança. Embora a corporação fosse incrivelmente rica e poderosa, e Saburo um dos homens mais ricos do mundo, ele não havia esquecido seu objetivo original. Durante esse período, Saburo deixou o cargo de CEO e, em seu lugar, seu filho Kei Arasaka se tornou o chefe nominal da Corporação Arasaka. No entanto, todas as decisões e políticas importantes ainda estavam sujeitas ao critério de Saburo. Saburo havia preparado seu filho para o eventual controle total e para a realização de seus objetivos pessoais.[6]
@@ -149,12 +118,12 @@
                                 O Fim da Guerra e a Queda:<br>
                                 O fim da guerra para a empresa resultou na morte de Kei Arasaka e na destruição das Torres Arasaka em Night City no ano de 2023, sendo obliteradas por uma mini-bomba nuclear plantada por uma equipe tática da Militech. A presidente Kress (dos NUSA) culpou a Arasaka pelo atentado em Night City, apesar de a culpa ser da Militech, e demonizou ainda mais a Arasaka para favorecer seus próprios interesses políticos.
                                 <br>
-                                        As licenças da Arasaka para operar nos Estados Unidos foram revogadas imediatamente, seus membros e diretores foram declarados terroristas e seus ativos foram confiscados ou transferidos para paraísos fiscais (off-shore). A participação da Arasaka na Quarta Guerra Corporativa quase levou ao colapso do governo japonês. Ao repudiar a Arasaka após o fim oficial da guerra em 2025, a imagem nacional do Japão foi salva e a Arasaka foi reduzida a uma corporação restrita apenas ao Japão pela década seguinte.[2]
-                                        <br>                                
-                                
-                                </p>
-                                <img src="img/Arasaka_factory.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
-                                <p style="color: #000000;">História: 2040 - 2076<br><br>
+                                As licenças da Arasaka para operar nos Estados Unidos foram revogadas imediatamente, seus membros e diretores foram declarados terroristas e seus ativos foram confiscados ou transferidos para paraísos fiscais (off-shore). A participação da Arasaka na Quarta Guerra Corporativa quase levou ao colapso do governo japonês. Ao repudiar a Arasaka após o fim oficial da guerra em 2025, a imagem nacional do Japão foi salva e a Arasaka foi reduzida a uma corporação restrita apenas ao Japão pela década seguinte.[2]
+                                <br>
+                            </p>
+                            <img src="img/Arasaka_factory.png" alt="descrição da imagem" class="imagem-conteudo">
+                            <p class="texto-conteudo">
+                                História: 2040 - 2076<br><br>
                                 Orla da Arasaka (Arasaka Waterfront), 2076<br><br>
                                 <br>
                                 Mesmo após a derrota na Quarta Guerra Corporativa, a Arasaka manteve uma das maiores forças armadas em comparação com qualquer outra corporação. A empresa teve a maior parte de suas operações limitadas ao Japão e fortemente reduzidas. Apesar da situação, a Arasaka ainda conseguiu manter a maioria de seus ativos.[2]
@@ -190,55 +159,53 @@
                                 2076: O departamento de contrainteligência da Arasaka conseguiu garantir a segurança de uma cúpula corporativa em Jacarta, na Indonésia, impedindo 45 conspirações de ataque e sabotagem contra o evento.[3]
                                 <br>
                                 2076 (Incidente Espacial): Uma equipe de agentes da Militech descobriu que a Arasaka estava escondendo o fato de possuir um acelerador de massa na Lua. A ESA (Agência Espacial Europeia) era a única organização com permissão para operar e possuir aceleradores de massa, uma vantagem que queriam manter. Por causa disso, a Militech avisou o conselho da ESA para prejudicar a rival. A ESA convocou uma reunião imediata para reexaminar a licença da Arasaka em assuntos espaciais. Os responsáveis pelo erro foram a Arasaka America, do braço de operações de Night City, e muitos funcionários temiam a resposta do Japão. Em uma tentativa de cobrir seus rastros, Arthur Jenkins ordenou a execução de membros do conselho — um movimento que, entre outras decisões, acabou custando a sua própria vida.[3]
-                                <br>   
-                                
-                                </p>
-                                <img src="img/Arasaka_Waterfront.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
                                 <br>
-                                <h1 style="margin-top: 0; color: #1f1e1e;">2077....</h1><br> <br> 
-                                <p style="color: #000000;">Inovações, Tensões e o Relic<br> <br> 
+                            </p>
+                            <img src="img/Arasaka_Waterfront.png" alt="descrição da imagem" class="imagem-conteudo">
+                            <br>
+                            <h1 class="titulo-conteudo">2077....</h1>
+                            <br><br>
+                            <p class="texto-conteudo">
+                                Inovações, Tensões e o Relic<br><br>
                                 Testes Militares e Avanços: No Japão, os engenheiros da Arasaka conduziram com sucesso testes de mísseis balísticos em Yakushima. O novo míssil eletromagnético destinava-se a combater a crescente ameaça terrorista, bem como outros elementos rebeldes que ameaçavam a segurança pública. Também circulavam rumores de que a Arasaka estaria desenvolvendo uma nova linha de intensificadores de reflexos que durariam o dobro do tempo dos modelos atuais no mercado. A corporação estava em busca de participantes voluntários para esses experimentos.
-                                    <br> 
+                                <br>
                                 Crescimento Corporativo: Durante um relatório aos acionistas, o conselho de administração anunciou que a Lasombra, sede da Arasaka no México, aumentou o poder de voto dos acionistas em 1,5%.
-                                    <br> 
+                                <br>
                                 A Melhor Empresa para se Trabalhar: Em Night City, a Arasaka foi eleita a Megacorporação número #1 para se trabalhar. A gigante zaibatsu japonesa forneceria aos funcionários a mais recente tecnologia em cyberware com uma obrigação de lealdade de "apenas" 20 anos.[12]
-                                <br> 
+                                <br>
                                 O Lançamento do Relic: Em Tóquio, a Arasaka introduziu uma nova e revolucionária linha de biochips premium chamada Relic, anunciada como um meio para os compradores preservarem uma cópia de suas personalidades para as gerações futuras interagirem. A notícia foi dada primeiro pelo Nippon Daily, pouco antes de a Arasaka confirmá-la oficialmente. Dizia-se que a nova tecnologia revolucionária seria muito cara e um serviço exclusivo para o 1% que pudesse pagar por ela, o que significava que o produto não seria disponibilizado ao público em geral num futuro próximo.
-                                <br> 
+                                <br>
                                 Educação e Controle: A Arasaka anunciou que havia assinado um acordo de cooperação com a Universidade de Night City, oferecendo aos seus professores e alunos implantes cognitivos Arasaka Ozukumi Sx sob empréstimo com um desconto de 20%.
-                                <br> 
-                                A Morte do Imperador e o Caos Interno<br> 
+                                <br>
+                                A Morte do Imperador e o Caos Interno<br>
                                 Saburo continuou atuando como CEO da Arasaka até sua morte, quando foi assassinado por seu filho, Yorinobu. A morte do CEO foi encoberta e atribuída a um envenenamento, enquanto Yorinobu consolidava o apoio da corporação e se tornava o novo CEO. Alguns dentro da corporação viam a ascensão repentina de Yorinobu com suspeita e cogitavam apoiar Hanako.[3]
-                                <br> 
+                                <br>
                                 Yorinobu tomou decisões controversas dentro da empresa, como a venda de ativos de instalações em Fukuoka e Kitakyushu. As ações da Corporação Arasaka saltaram 3% após essa decisão. A empresa patrocinou a Parada Dashi, um festival clássico japonês em Japantown, Night City. O desfile também se tornaria um festival em memória de Saburo Arasaka, um evento ao qual Hanako compareceria antes da notícia do falecimento de seu pai. Durante esse período, as tensões aumentavam entre a Arasaka e a Militech; a sabotagem corporativa poderia ser o estopim de outra Guerra Corporativa entre as duas empresas.
-                                <br> 
+                                <br>
                                 Após "resgatar" com sucesso sua irmã Hanako, Yorinobu convocou uma reunião de emergência do conselho supervisor da Arasaka em Night City. Altos executivos de Tóquio, bem como diretores de filiais de Paris, Xangai e Kinshasa, se reuniriam na Torre Arasaka, sede da Divisão Americana. Na verdade, Yorinobu tinha um plano para um golpe militar que daria a ele, e aos leais à sua facção, controle total sobre a Corporação Arasaka para seu projeto de sabotagem.
-                               <br>     
-                                
-                                </p>
-                                <img src="img/Yorinobu_PC.png" alt="descrição da imagem" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px;">
-                                <h1 style="margin-top: 0; color: #1f1e1e;">"Arasaka: Garantindo o seu futuro."</h1>
-                                Arasaka.
+                                <br>
+                            </p>
+                            <img src="img/Yorinobu_PC.png" alt="descrição da imagem" class="imagem-conteudo">
+                            <h1 class="titulo-conteudo">"Arasaka: Garantindo o seu futuro."</h1>
+                            <p class="texto-conteudo">Arasaka.</p>
                         </td>
                     </tr>
 
-                   <!-- 3. Rodapé -->
-                        <tr>
-                            <td colspan="2" width="1200" height="120" align="center" style="width: 1200px; height: 120px; background: linear-gradient(180deg, #eed80f 0%, #a38606 100%); border-top: 1px solid #1a3550; box-shadow: 0 -4px 12px rgba(0,0,0,0.35); font-family: sans-serif; color: #000000; font-size: 13px;">
-                            <p style="margin: 6px 0; letter-spacing: 0.5px;">&copy; 2026 Site da Arasaka. Todos os direitos reservados.</p>
-                            <p style="margin: 6px 0; color: #000000;">Arasaka é a marca registra por Saburo Arasaka, passada para filho Yorinobu Arasaka de forma atípica.</p>
-                            <p style="margin: 6px 0; color: #000000;">Desenvolvido apenas para fins lucrativos.</p>
-                            <p style="margin: 6px 0; color: #000000;">Feito por Mark Stembark.</p>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td colspan="2" width="1200" height="120" align="center" class="rodape">
+                            <p class="rodape-texto">&copy; 2026 Site da Arasaka. Todos os direitos reservados.</p>
+                            <p class="rodape-texto">Arasaka é a marca registra por Saburo Arasaka, passada para filho Yorinobu Arasaka de forma atípica.</p>
+                            <p class="rodape-texto">Desenvolvido apenas para fins lucrativos.</p>
+                            <p class="rodape-texto">Feito por Mark Stembark.</p>
+                        </td>
+                    </tr>
 
-                    </table>
-                </td>
-
-            <!-- Lateral Direita -->
-            <td valign="top" style="background-image: url('img/amarelodireita.png'); background-repeat: repeat-y; background-size:100%; background-position: top left;">
+                </table>
             </td>
+
+            <td valign="top" class="lateral lateral-direita"></td>
         </tr>
-      </table>
-    </body>
+    </table>
+
+</body>
 </html>
