@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/Arasaka" href="img/arasakalogo.png">
+<title>Arasaka Recruitment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/logincyber.css">
+
+<!-- Biblioteca do EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="page">
+
+    <div class="left">
+      <svg class="fb-logo" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="18" fill="#1877F2"/>
+        <path d="M25 18.06C25 13.6 21.42 10 17 10s-8 3.6-8 8.06c0 4.03 2.93 7.37 6.75 7.94v-5.62h-2.03v-2.32h2.03v-1.77c0-2.01 1.2-3.13 3.03-3.13.88 0 1.8.16 1.8.16v1.98h-1.02c-1 0-1.31.62-1.31 1.26v1.5h2.23l-.36 2.32h-1.87V26c3.82-.57 6.75-3.91 6.75-7.94z" fill="#fff"/>
+      </svg>
+      <div class="card card-main">
+        <div class="bar"></div>
+        <img src="img/almost4k.png" alt="" class="card-photo-main">
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="form-wrap">
+        <h1>Arasaka Recruitment</h1>
+
+        <form id="recruit-form">
+          <input class="input" type="email" id="user-email" placeholder="Email" required>
+          <button class="btn-primary" type="submit">Enviar gmail</button>
+        </form>
+
+        <!-- mensagem de status pro usuário -->
+        <p id="status-msg" style="text-align:center; font-family:'Rajdhani',sans-serif; margin-top:10px;"></p>
+
+        <hr class="divider">
+
+        <div class="meta-footer">
+          <svg width="20" height="20" viewBox="0 0 40 40" fill="none">
+            <path d="M8 20c0-6 3-11 8-11 3 0 5 2 7 5 2-3 4-5 7-5 5 0 8 5 8 11s-3 11-8 11c-3 0-5-2-7-5-2 3-4 5-7 5-5 0-8-5-8-11z" stroke="#8a8d91" stroke-width="2.2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-tagline">
+      <a class="btn-secondary" href="index.html">De volta ao Lobby</a>
+    </div>
+
+  </div>
+
+  <!-- Script do envio -->
+  <script>
+    // inicializa o EmailJS com sua Public Key
+    emailjs.init("ABm6FRWAJF1KJ7TvQ");
+
+    document.getElementById('recruit-form').addEventListener('submit', function (e) {
+      e.preventDefault(); // impede o formulário de recarregar a página
+
+      const userEmail = document.getElementById('user-email').value;
+      const statusMsg = document.getElementById('status-msg');
+      const btn = e.target.querySelector('button');
+
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+
+      emailjs.send("service_mnl6417", "template_s6hfnps", {
+        user_email: userEmail   // essa variável precisa bater com {{user_email}} no seu template
+      })
+      .then(() => {
+        statusMsg.textContent = "Enviado com sucesso!";
+        statusMsg.style.color = "#2e7d32";
+        document.getElementById('recruit-form').reset();
+      })
+      .catch((err) => {
+        statusMsg.textContent = "Erro ao enviar. Tente novamente.";
+        statusMsg.style.color = "#c62828";
+        console.error(err);
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = "Enviar gmail";
+      });
+    });
+  </script>
+
+</body>
+</html>
