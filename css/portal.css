@@ -1,0 +1,85 @@
+:root { --red: #ff0000; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; background: #000; overflow: hidden; }
+
+#site {
+    position: fixed;
+    inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
+    background: #000;
+}
+
+/* ---------- Mini player ---------- */
+.mini {
+    position: fixed;
+    right: 20px; bottom: 20px;
+    width: min(380px, calc(100% - 32px));
+    padding: 12px 16px 14px;
+    background: #000;
+    border: 2px solid var(--red);
+    box-shadow: 0 0 24px rgba(255, 0, 0, .25);
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    z-index: 10;
+}
+.mini[hidden] { display: none; }
+
+.mini-top { display: flex; align-items: center; gap: 12px; }
+.mini-title {
+    flex: 1; min-width: 0;
+    color: var(--red);
+    font-size: 18px; font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+#wave { display: block; width: 100%; height: 36px; margin-top: 10px; }
+
+/* Barra de progresso com marcador em losango */
+.mini-seek { position: relative; height: 18px; margin-top: 4px; cursor: pointer; }
+.mini-seek::before {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 50%;
+    height: 2px; margin-top: -1px;
+    background: #fff;
+}
+.mini-seek i {
+    position: absolute; left: 0; top: 50%;
+    width: 0; height: 3px; margin-top: -1.5px;
+    background: var(--red);
+}
+.mini-seek b {
+    position: absolute; left: 0; top: 50%;
+    width: 10px; height: 10px; margin: -5px 0 0 -5px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+.mini-controls { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+
+.mbtn {
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    background: transparent;
+    border: 2px solid var(--red);
+    color: var(--red);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+}
+.mbtn svg { width: 18px; height: 18px; fill: currentColor; }
+.mbtn.main { width: 56px; background: var(--red); color: #000; }
+.mbtn:hover, .mbtn:focus-visible { background: var(--red); color: #000; }
+.mbtn.main:hover, .mbtn.main:focus-visible { background: #000; color: var(--red); }
+.mbtn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+.mini-close { width: 28px; height: 28px; }
+.mini-close svg { width: 14px; height: 14px; }
+
+.i-pause { display: none; }
+.mini.playing .i-play { display: none; }
+.mini.playing .i-pause { display: block; }

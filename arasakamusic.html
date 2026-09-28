@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/arasakamusiclogo.png">
+    <title>Arasaka Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/arasakamusic.css">
+    <script src=".jser.js"></script>
+    
+</head>
+<body>
+    <span class="serial">ARASAKA 05-0411-980</span>
+
+    <main class="stage">
+        
+            <a href="index.html"><img class="brand" src="img/arasakamusiclogo.png" alt="Arasaka Corporation Music">
+            </a>
+        <section class="login">
+            <p class="label">SECURITY LOGIN</p>
+
+            <!-- Caixa UID: nome da música + disco girando -->
+            <div class="uid">
+                <span class="uid-text" id="title">UID</span>
+                <span class="cursor" aria-hidden="true">_</span>
+
+                <div class="disc" aria-hidden="true">
+                    <svg viewBox="0 0 200 200">
+                        <defs>
+                            <path id="discText" d="M100 100 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/>
+                        </defs>
+                        <circle cx="100" cy="100" r="97" fill="#000" stroke="#f00" stroke-width="3"/>
+                        <circle cx="100" cy="100" r="86" fill="none" stroke="#4a0000" stroke-width="1.5"/>
+                        <circle cx="100" cy="100" r="76" fill="none" stroke="#4a0000" stroke-width="1.5"/>
+                        <circle cx="100" cy="100" r="66" fill="none" stroke="#4a0000" stroke-width="1.5"/>
+                        <path d="M100 100 L100 6 A94 94 0 0 1 166 33 Z" fill="#fff" opacity=".07"/>
+                        <path d="M100 100 L100 194 A94 94 0 0 1 34 167 Z" fill="#fff" opacity=".07"/>
+                        <circle cx="100" cy="100" r="52" fill="#f00"/>
+                        <text font-size="12" font-weight="700" fill="#000" letter-spacing="1.5">
+                            <textPath href="#discText" startOffset="25%" text-anchor="middle" id="discTitle"></textPath>
+                        </text>
+                        <circle cx="100" cy="100" r="7" fill="#000"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Barra de progresso (clicável) -->
+            <div class="progress">
+                <span class="slashes">//////////</span>
+                <div class="seek" id="seek"><i id="fill"></i></div>
+            </div>
+
+            <p class="info">CURR_NETWORK: <b>ACN007079</b></p>
+            <p class="info">NL_PORT_STATUS: <b>OPEN</b></p>
+
+            <!-- Controles -->
+            <div class="controls">
+                <button class="ctl" id="prev" type="button" aria-label="Música anterior">
+                    <svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
+                </button>
+                <button class="ctl main" id="toggle" type="button" aria-label="Tocar">
+                    <svg class="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>
+                    <svg class="i-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+                </button>
+                <button class="ctl" id="next" type="button" aria-label="Próxima música">
+                    <svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg>
+                </button>
+            </div>
+            <div class="volume">
+    <button class="ctl" id="mute" type="button" aria-label="Silenciar">
+        <svg viewBox="0 0 24 24">
+            <path d="M3 9v6h4l5 4V5L7 9z"/>
+            <path class="waves" d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path class="x" d="M16 9l6 6M22 9l-6 6" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+    </button>
+    <input class="vol-slider" id="volume" type="range" min="0" max="100" value="50" aria-label="Volume">
+</div>
+        </section>
+    </main>
+
+    <!-- Lista de faixas (canto direito) -->
+    <aside class="playlist">
+        <div class="pl-head">
+            <h2>PLAYLIST</h2>
+            <span class="count" id="count"></span>
+        </div>
+        <ol class="tracklist" id="tracklist"></ol>
+    </aside>
+
+    <audio id="audio" preload="metadata"></audio>
+    <script src="js/player.js"></script>
+</body>
+</html>

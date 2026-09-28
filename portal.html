@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/arasakamusiclogo.png">
+    <title>Arasaka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+    <!-- O site inteiro roda aqui dentro. Esta página nunca recarrega,
+         por isso o áudio não é interrompido ao trocar de página. -->
+    <iframe id="site" title="Arasaka"></iframe>
+
+    <!-- Mini player: aparece depois do primeiro play e some na página da música -->
+    <aside class="mini" id="mini" hidden aria-label="Mini player Arasaka Music">
+        <div class="mini-top">
+            <span class="mini-title" id="miniTitle"></span>
+            <button class="mbtn mini-close" id="miniClose" type="button" aria-label="Fechar mini player">
+                <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+            </button>
+        </div>
+
+        <canvas id="wave" width="640" height="72" aria-hidden="true"></canvas>
+
+        <div class="mini-seek" id="miniSeek">
+            <i id="miniFill"></i><b id="miniKnob"></b>
+        </div>
+
+        <div class="mini-controls">
+            <button class="mbtn" id="miniPrev" type="button" aria-label="Música anterior">
+                <svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
+            </button>
+            <button class="mbtn main" id="miniPlay" type="button" aria-label="Tocar">
+                <svg class="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>
+                <svg class="i-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+            </button>
+            <button class="mbtn" id="miniNext" type="button" aria-label="Próxima música">
+                <svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg>
+            </button>
+        </div>
+    </aside>
+
+    <audio id="audio" preload="metadata"></audio>
+    <script src="js/tracks.js"></script>
+    <script src="js/portal.js"></script>
+</body>
+</html>
