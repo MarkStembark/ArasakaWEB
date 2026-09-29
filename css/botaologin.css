@@ -1,0 +1,35 @@
+.topbar .btn-top {
+    display: inline-block;
+
+    width: 106px;
+    height: 35px;
+
+    padding: 8px 10px;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    text-align: center;
+    line-height: 17px;
+
+    color: #fff;
+    background: #b81515;
+
+    border: 1px solid #b81515;
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    transition: 0.25s ease;
+}
+
+.topbar .btn-top:hover {
+    background: #e20e0e;
+    border-color: #e20e0e;
+
+    box-shadow:
+        0 0 10px rgba(226, 14, 14, 0.8);
+}

@@ -1,157 +1,516 @@
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: Helvetica, Arial, sans-serif;
-    background: #fff;
-    color: #1c1e21;
-  }
-  .page {
-    display: flex;
-    min-height: 100vh;
-  }
+/* =========================================================
+   RESET
+   ========================================================= */
 
-  /* ---------- LEFT SIDE ---------- */
-  .left {
-    width: 80%;
-    position: relative;
-    padding: 48px 60px;
-    display: left;
-    flex-direction: column;
-    justify-content: space-between;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: #000000;
+    color: #1c1e21;
+
     overflow: hidden;
-  }
-  
-
-  /* ---------- RIGHT SIDE ---------- */
-  .right {
-  width: 700px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  border-left: 2px solid #697e80;
-
-  position: relative; /* já era necessário pro .bottom-tagline, mantém aqui */
-
-  /* imagem de fundo do painel direito */
-  background-image: url('../img/almost4kleft.png');
-  background-size: cover;
-  background-position: center;
 }
 
-  .form-wrap {
-    width: 100%;
-    max-width: 320px;
-  }
-  .form-wrap h1 {
-    font-size: 30   px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    font-family: 'Rajdhani', sans-serif;
-    color: #1c1e21;
-  }
-  .input {
-    width: 100%;
-    font-family: 'Rajdhani', sans-serif;
-    padding: 14px 16px;
-    font-size: 15px;
-    border: 1px solid #ccd0d5;
-    border-radius: 12px;
-    margin-bottom: 14px;
-    outline: none;
-  }
-  .input:focus {
-    border-color: #7497a1;
-    box-shadow: 0 0 0 2px rgba(24,119,242,0.15);
-  }
-  .btn-primary {
-    width: 100%;
-    font-family: 'Rajdhani', sans-serif;
-    padding: 14px;
-    background: #4f6974;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 700;
-    border: none;
-    border-radius: 23px;
-    cursor: pointer;
-    margin-bottom: 18px;
-  }
-  .btn-primary:hover { background: #a13535; }
-  .forgot {
-    display: block;
-    font-family: 'Rajdhani', sans-serif;
-    text-align: center;
-    color: #1877f2;
-    font-size: 14px;
-    text-decoration: none;
-    margin-bottom: 22px;
-  }
-  .forgot:hover { text-decoration: underline; }
-  .divider {
-    border: none;
-    border-top: 1px solid #dadde1;
-    margin: 22px 0;
-  }
-  .btn-secondary {
-    width: 100%;
-    font-family: 'Rajdhani', sans-serif;
-    padding: 14px;
-    background: #4f6974;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 700;
-    border: none;
-    border-radius: 23px;
-    cursor: pointer;
-    margin-bottom: 18px;
-  }
-  .btn-secondary:hover { background: #fae103bb; }
 
-  .meta-footer {
-    margin-top: 40px;
+/* =========================================================
+   PÁGINA PRINCIPAL
+   ========================================================= */
+
+.page {
+    width: 100vw;
+    height: 100vh;
+
     display: flex;
-    font-family: 'Rajdhani', sans-serif;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    color: #8a8d91;
-    font-size: 15px;
-    font-weight: 700;
-  }
+    flex-direction: row;
 
-  @media (max-width: 900px) {
-    .left { display: none; }
-    .right { width: 100%; border-left: none; }
-  }
-  .right {
-  position: relative; /* vira a referência pro texto absoluto */
+    overflow: hidden;
 }
 
-.bottom-tagline {
-  position: absolute;
-  bottom: 55px;
-  left: 81.5%;
-  font-family: 'Rajdhani', sans-serif;
-  transform: translateX(-50%);
-  font-size: 54px;
-  font-weight: 700;
-  line-height: 1.15;
-  color: #4d6281;
+
+/* =========================================================
+   LADO ESQUERDO
+   ========================================================= */
+
+.left {
+
+    /* Aproximadamente a mesma proporção da imagem de referência */
+    width: 63.2vw;
+    height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    background: #000000;
 }
+
+
+/* =========================================================
+   IMAGEM PRINCIPAL
+   ========================================================= */
 
 .card-main {
-  overflow: hidden; 
-  padding: 14px;
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
 }
 
+
 .card-photo-main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  
-  border-radius: inherit; 
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    border: none;
+
+    border-radius: 0;
+}
+
+
+/* =========================================================
+   LADO DIREITO
+   ========================================================= */
+
+.right {
+
+    width: 36.8vw;
+    height: 100vh;
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    /*
+       Linha vertical que separa a imagem do formulário
+    */
+
+    border-left: 2px solid #697e80;
+
+
+    /*
+       Fundo do painel direito
+    */
+
+    background-image: url("../img/LOGOLIN2.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.form-wrap {
+
+    width: 100%;
+
+    max-width: 320px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.form-wrap h1 {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-bottom: 24px;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    color: #51a1cf;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.input {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 12px 16px;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 15px;
+
+    color: #1c1e21;
+
+    background: #ffffff;
+
+    border: 1px solid #ccd0d5;
+
+    border-radius: 12px;
+
+    margin-bottom: 14px;
+
+    outline: none;
+}
+
+
+.input:focus {
+
+    border-color: #7497a1;
+
+    box-shadow:
+        0 0 0 2px rgba(24, 119, 242, 0.15);
+}
+
+
+/* =========================================================
+   BOTÃO ENVIAR
+   ========================================================= */
+
+.btn-primary {
+
+    display: block;
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 12px 14px;
+
+    background: #4f6974;
+
+    color: #ffffff;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    border: none;
+
+    border-radius: 23px;
+
+    cursor: pointer;
+
+    margin-bottom: 18px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.15s ease;
+}
+
+
+.btn-primary:hover {
+
+    background: #a13535;
+
+}
+
+
+.btn-primary:active {
+
+    transform: scale(0.98);
+
+}
+
+
+.btn-primary:disabled {
+
+    opacity: 0.7;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   MENSAGEM DE STATUS
+   ========================================================= */
+
+.status-msg {
+
+    min-height: 20px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    text-align: center;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   LINHA DIVISÓRIA
+   ========================================================= */
+
+.divider {
+
+    width: 100%;
+
+    border: none;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.65);
+
+    margin: 22px 0;
+}
+
+
+/* =========================================================
+   ÍCONE INFERIOR DO FORMULÁRIO
+   ========================================================= */
+
+.meta-footer {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    color: #8a8d91;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BOTÃO "DE VOLTA AO LOBBY"
+   ========================================================= */
+
+.bottom-tagline {
+
+    position: absolute;
+
+    /*
+       Centraliza o botão dentro do painel direito.
+    */
+
+    left: 50%;
+
+    bottom: 45px;
+
+    transform: translateX(-50%);
+
+    width: 140px;
+
+    z-index: 5;
+}
+
+
+.btn-secondary {
+
+    display: block;
+
+    width: 140px;
+
+    height: 46px;
+
+    padding: 12px 8px;
+
+    background: #4f6974;
+
+    color: #ffffff;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    text-decoration: underline;
+
+    border: none;
+
+    border-radius: 23px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.15s ease;
+}
+
+
+.btn-secondary:hover {
+
+    background: #fae103;
+
+    color: #000000;
+
+}
+
+
+.btn-secondary:active {
+
+    transform: scale(0.97);
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    .page {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        height: auto;
+
+        display: block;
+
+        overflow: visible;
+    }
+
+
+    /* Esconde imagem no celular */
+
+    .left {
+
+        display: none;
+    }
+
+
+    /* Painel ocupa tudo */
+
+    .right {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        height: 100vh;
+
+        border-left: none;
+
+        padding: 25px;
+    }
+
+
+    .form-wrap {
+
+        max-width: 360px;
+    }
+
+
+    .bottom-tagline {
+
+        bottom: 30px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .right {
+
+        padding: 20px;
+    }
+
+
+    .form-wrap {
+
+        max-width: 100%;
+    }
+
+
+    .form-wrap h1 {
+
+        font-size: 26px;
+
+        text-align: center;
+    }
+
+
+    .bottom-tagline {
+
+        bottom: 25px;
+    }
 }

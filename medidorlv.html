@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/Arasaka" href="img/arasakalogo4.png">
+
+    <title>Arasaka - Love Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/cyberp.css">
+</head>
+
+
+<body>
+
+    <main class="love-page">
+
+        <section class="love-container">
+
+            <div class="love-header">
+
+                <div class="arasaka-symbol">
+                    ◉
+                </div>
+
+                <h1>LOVE COMPATIBILITY</h1>
+
+                <p>
+                    ARASAKA RELATIONSHIP ANALYSIS SYSTEM
+                </p>
+
+                <div class="red-line"></div>
+
+            </div>
+
+
+            <div class="love-form">
+
+                <!-- NOME A -->
+                <div class="name-field">
+
+                    <label for="nomeA">
+                        IDENTIDADE A
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeA"
+                        maxlength="10"
+                        placeholder="Digite o nome"
+                        autocomplete="off"
+                    >
+
+                    <span class="char-count" id="countA">
+                        0 / 10
+                    </span>
+
+                </div>
+
+
+                <div class="love-symbol">
+                    +
+                </div>
+
+
+                <!-- NOME B -->
+                <div class="name-field">
+
+                    <label for="nomeB">
+                        IDENTIDADE B
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeB"
+                        maxlength="10"
+                        placeholder="Digite o nome"
+                        autocomplete="off"
+                    >
+
+                    <span class="char-count" id="countB">
+                        0 / 10
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÃO -->
+            <button
+                type="button"
+                class="love-button"
+                id="calculateButton"
+            >
+                ANALISAR COMPATIBILIDADE
+            </button>
+
+
+            <!-- RESULTADO -->
+            <section
+                class="love-result"
+                id="result"
+            >
+
+                <h2>
+                    RESULTADO DA ANÁLISE
+                </h2>
+
+
+                <div class="names-result">
+
+                    <div>
+                        <span>IDENTIDADE A</span>
+                        <strong id="resultNameA">---</strong>
+                    </div>
+
+                    <div>
+                        <span>VALOR</span>
+                        <strong id="scoreA">---</strong>
+                    </div>
+
+                    <div>
+                        <span>IDENTIDADE B</span>
+                        <strong id="resultNameB">---</strong>
+                    </div>
+
+                    <div>
+                        <span>VALOR</span>
+                        <strong id="scoreB">---</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- BARRA -->
+                <div class="probability-area">
+
+                    <div class="probability-top">
+
+                        <span>
+                            PROBABILIDADE DE COMPATIBILIDADE
+                        </span>
+
+                        <strong id="percentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="probability-bar">
+
+                        <div
+                            class="probability-fill"
+                            id="probabilityFill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="result-message"
+                    id="resultMessage"
+                >
+                    AGUARDANDO ANÁLISE...
+                </div>
+
+            </section>
+
+
+        </section>
+
+
+        <!-- VOLTAR -->
+        <a
+            href="index.html"
+            class="back-home"
+        >
+            VOLTAR AO LOBBY
+        </a>
+
+    </main>
+
+
+    <script>
+
+        /* =====================================================
+           VALORES FIXOS DAS LETRAS
+           ===================================================== */
+
+        const letterValues = {
+
+            a: 8,
+            b: 17,
+            c: 26,
+            d: 35,
+            e: 44,
+            f: 53,
+            g: 62,
+            h: 71,
+            i: 80,
+            j: 89,
+            k: 98,
+
+            l: 14,
+            m: 23,
+            n: 32,
+            o: 41,
+            p: 50,
+            q: 59,
+            r: 68,
+            s: 77,
+            t: 86,
+            u: 95,
+            v: 11,
+            w: 20,
+            x: 29,
+            y: 38,
+            z: 47
+
+        };
+
+
+        /* =====================================================
+           BÔNUS POR QUANTIDADE DE LETRAS
+           ===================================================== */
+
+        const lengthBonus = {
+
+            1: 5,
+            2: 10,
+            3: 15,
+            4: 20,
+            5: 25,
+            6: 30,
+            7: 35,
+            8: 40,
+            9: 45,
+            10: 50
+
+        };
+
+
+        /* =====================================================
+           ELEMENTOS
+           ===================================================== */
+
+        const nomeA = document.getElementById("nomeA");
+        const nomeB = document.getElementById("nomeB");
+
+        const countA = document.getElementById("countA");
+        const countB = document.getElementById("countB");
+
+        const calculateButton =
+            document.getElementById("calculateButton");
+
+        const result =
+            document.getElementById("result");
+
+        const resultNameA =
+            document.getElementById("resultNameA");
+
+        const resultNameB =
+            document.getElementById("resultNameB");
+
+        const scoreA =
+            document.getElementById("scoreA");
+
+        const scoreB =
+            document.getElementById("scoreB");
+
+        const percentage =
+            document.getElementById("percentage");
+
+        const probabilityFill =
+            document.getElementById("probabilityFill");
+
+        const resultMessage =
+            document.getElementById("resultMessage");
+
+
+        /* =====================================================
+           CONTADOR DE CARACTERES
+           ===================================================== */
+
+        nomeA.addEventListener("input", () => {
+
+            countA.textContent =
+                `${nomeA.value.length} / 10`;
+
+        });
+
+
+        nomeB.addEventListener("input", () => {
+
+            countB.textContent =
+                `${nomeB.value.length} / 10`;
+
+        });
+
+
+        /* =====================================================
+           CALCULAR VALOR DO NOME
+           ===================================================== */
+
+        function calculateNameValue(name) {
+
+            const normalized =
+                name
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .replace(/[^a-z]/g, "");
+
+
+            if (normalized.length === 0) {
+                return 0;
+            }
+
+
+            let total = 0;
+
+
+            for (const letter of normalized) {
+
+                total +=
+                    letterValues[letter] || 1;
+
+            }
+
+
+            /*
+                Média dos valores das letras.
+                Mantém o resultado entre 1 e 100.
+            */
+
+            const average =
+                total / normalized.length;
+
+
+            /*
+                Bônus fixo pela quantidade de letras.
+            */
+
+            const bonus =
+                lengthBonus[normalized.length] || 0;
+
+
+            /*
+                O bônus tem peso reduzido para não
+                destruir a lógica da proximidade.
+            */
+
+            const finalValue =
+                (average * 0.75) + (bonus * 0.25);
+
+
+            return Math.round(finalValue);
+
+        }
+
+
+        /* =====================================================
+           CALCULAR COMPATIBILIDADE
+           ===================================================== */
+
+        function calculateCompatibility(valueA, valueB) {
+
+            const difference =
+                Math.abs(valueA - valueB);
+
+
+            /*
+                Quanto menor a diferença,
+                maior a compatibilidade.
+
+                0 de diferença = 100%
+                100 de diferença = 0%
+            */
+
+            let compatibility =
+                100 - difference;
+
+
+            /*
+                Mantém entre 0 e 100.
+            */
+
+            compatibility =
+                Math.max(
+                    0,
+                    Math.min(100, compatibility)
+                );
+
+
+            return compatibility;
+
+        }
+
+
+        /* =====================================================
+           MENSAGEM
+           ===================================================== */
+
+        function getMessage(value) {
+
+            if (value >= 90) {
+
+                return "COMPATIBILIDADE EXCEPCIONAL. A ARASAKA APROVA ESTA UNIÃO.";
+
+            }
+
+            if (value >= 75) {
+
+                return "ALTA COMPATIBILIDADE. OS DADOS SÃO FAVORÁVEIS.";
+
+            }
+
+            if (value >= 60) {
+
+                return "COMPATIBILIDADE ESTÁVEL. HÁ POTENCIAL NESTA RELAÇÃO.";
+
+            }
+
+            if (value >= 40) {
+
+                return "COMPATIBILIDADE MODERADA. O RESULTADO PERMANECE INCONCLUSIVO.";
+
+            }
+
+            if (value >= 20) {
+
+                return "BAIXA COMPATIBILIDADE. OS PERFIS APRESENTAM CONFLITOS.";
+
+            }
+
+            return "COMPATIBILIDADE CRÍTICA. A ARASAKA RECOMENDA CAUTELA.";
+
+        }
+
+
+        /* =====================================================
+           BOTÃO DE ANÁLISE
+           ===================================================== */
+
+        calculateButton.addEventListener("click", () => {
+
+            const nameA =
+                nomeA.value.trim();
+
+            const nameB =
+                nomeB.value.trim();
+
+
+            if (!nameA || !nameB) {
+
+                alert(
+                    "Insira os dois nomes para iniciar a análise."
+                );
+
+                return;
+
+            }
+
+
+            if (nameA.length > 10 || nameB.length > 10) {
+
+                alert(
+                    "Cada identidade pode possuir no máximo 10 caracteres."
+                );
+
+                return;
+
+            }
+
+
+            const valueA =
+                calculateNameValue(nameA);
+
+            const valueB =
+                calculateNameValue(nameB);
+
+
+            const compatibility =
+                calculateCompatibility(
+                    valueA,
+                    valueB
+                );
+
+
+            /* RESULTADOS */
+
+            resultNameA.textContent =
+                nameA.toUpperCase();
+
+            resultNameB.textContent =
+                nameB.toUpperCase();
+
+            scoreA.textContent =
+                valueA;
+
+            scoreB.textContent =
+                valueB;
+
+
+            percentage.textContent =
+                compatibility + "%";
+
+
+            probabilityFill.style.width =
+                compatibility + "%";
+
+
+            resultMessage.textContent =
+                getMessage(compatibility);
+
+
+            result.classList.add("active");
+
+        });
+
+    </script>
+
+</body>
+</html>

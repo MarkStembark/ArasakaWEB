@@ -1,352 +1,1378 @@
-/* ===================================================================
+/* =========================================================
    RESET / BASE
-   =================================================================== */
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    min-height: 100%;
+    background: #000000;
 }
- 
-/* ===================================================================
-   TOPBAR — barra fixa no topo esquerdo da tela
-   =================================================================== */
-.topbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
- 
-    padding: 10px 16px;
- 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
- 
-    background: rgba(0, 0, 0, 0.55);
- 
-    border-bottom: 2px solid #b81515;
-    border-right: 2px solid #b81515;
-    border-radius: 0 0 10px 0;
-}
- 
-.btn-topbar {
+
+body {
     font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
- 
-    color: #e20e0e;
-    text-decoration: none;
- 
-    padding: 8px 18px;
- 
-    border: 1px solid #b81515;
-    border-radius: 6px;
- 
-    background: transparent;
-    transition: all 0.25s ease;
-    cursor: pointer;
+    overflow-x: hidden;
 }
- 
-.btn-topbar:hover {
-    background-color: #141414;
-    color: #ffffff;
-    border-color: #e20e0e;
-    box-shadow: 0 0 8px rgba(226, 14, 14, 0.6);
-}
- 
-.btn-login {
-    background: #b81515;
-    color: #ffffff;
-    border-color: #b81515;
-}
- 
-.btn-login:hover {
-    background: #e20e0e;
-    box-shadow: 0 0 10px rgba(226, 14, 14, 0.8);
-}
- 
-/* Para criar um novo botão na topbar:
-   1. No HTML: <a href="pagina.html" class="btn-topbar">Texto</a>
-   2. Se quiser um estilo próprio (cor diferente), crie uma classe nova
-      igual foi feito com .btn-login e aplique junto:
-      <a class="btn-topbar btn-destaque">Novo</a>            */
- 
- 
-/* ===================================================================
-   ESTRUTURA GERAL DA TABELA
-   =================================================================== */
+
+
+/* =========================================================
+   LATERAIS COM VÍDEO
+   ========================================================= */
+
 .tabela-principal {
     width: 100%;
     min-height: 100vh;
     border-collapse: collapse;
 }
- 
+
 .coluna-central {
     width: 1200px;
     min-width: 1200px;
-}
- 
-.tabela-central {
-    width: 1200px;
-    border-collapse: collapse;
-}
- 
-/* Laterais amarelas — imagem repetida verticalmente */
-.lateral-esquerda {
-    background-image: url('../img/amareloesquerda.png');
-    background-repeat: repeat-y;
-    background-size: 100%;
-    background-position: top right;
-}
- 
-.lateral-direita {
-    background-image: url('../img/amarelodireita.png');
-    background-repeat: repeat-y;
-    background-size: 100%;
-    background-position: top left;
-}
- 
-.banner-principal {
-    display: block;
-    width: 1200px;
-    height: 700px;
-    border: 0;
-}
- 
-/* ===================================================================
-   COLUNA DO MENU
-   =================================================================== */
-.coluna-menu {
-    width: 180px;
-    background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
-    box-shadow: inset -1px 0 0 rgba(184, 21, 21, 0.25);
-}
- 
-.titulo-menu {
-    color: #b81515;
-    font-family: sans-serif;
-    margin: 0;
-    padding: 18px 0 12px 0;
-    font-size: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
- 
-    border-bottom: 2px solid #b81515;
-    text-shadow: 0 0 8px rgba(184, 21, 21, 0.5);
-}
- 
-.nav-menu {
-    padding-top: 8px;
-}
- 
-.link-menu {
-    display: block;
-    color: #e20e0e;
-    text-decoration: none;
-    padding: 12px 14px;
-    font-family: sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.5px;
- 
-    border-left: 3px solid transparent;
-    transition: all 0.25s ease;
-}
- 
-.link-menu:hover {
-    background-color: #141414;
-    color: #ffffff;
-    border-left-color: #e20e0e;
-    padding-left: 18px;
-}
- 
-/* ===================================================================
-   COLUNA DE CONTEÚDO
-   =================================================================== */
-.coluna-conteudo {
-    width: 1020px;
-    background-color: #f1d453;
-    padding: 20px;
-    font-family: 'Rajdhani', sans-serif;
-}
- 
-.titulo-conteudo {
-    margin-top: 0;
-    color: #1f1e1e;
-}
- 
-.subtitulo-conteudo {
-    margin-top: 0;
-    color: #1f1e1e;
-}
- 
-.texto-conteudo {
-    color: #000000;
-}
- 
-.imagem-conteudo {
-    max-width: 50%;
-    height: auto;
-    display: block;
-    margin: 15px 0;
-    border-radius: 4px;
-}
- 
-.link-trabalho {
-    color: #1f1e1e;
-    font-weight: 700;
-    text-decoration: underline;
-}
- 
-.link-trabalho:hover {
-    color: #b81515;
-}
- 
-.video-responsivo {
+    vertical-align: top;
+
+    /*
+       BORDA VERMELHA DO SITE
+
+       box-shadow não altera os 1200px da coluna.
+       Portanto o site continua perfeitamente centralizado.
+    */
     position: relative;
-    width: 100%;
-    max-width: 900px;
-    padding-top: 50.625%;
-    margin: 15px 0;
+    z-index: 5;
+
+    box-shadow:
+        0 0 0 2px #9b0505,
+        0 0 15px rgba(155, 5, 5, 0.70),
+        0 0 35px rgba(155, 5, 5, 0.35);
 }
- 
-.video-responsivo iframe {
+
+
+/* =========================================================
+   ÁREA DAS LATERAIS
+   ========================================================= */
+
+.lateral {
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+
+    width: calc((100vw - 1200px) / 2);
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.lateral-esquerda {
+    left: 0;
+}
+
+.lateral-direita {
+    right: 0;
+}
+
+
+/* =========================================================
+   VÍDEO DAS LATERAIS
+   ========================================================= */
+
+.lateral video,
+.lateral img {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================================
+   FADE / BLUR DAS LATERAIS
+   ========================================================= */
+
+.lateral-esquerda::after,
+.lateral-direita::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 320px;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    /*
+       Dá um pequeno desfoque no vídeo próximo
+       da borda do site.
+    */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+/* =========================================================
+   FADE LATERAL ESQUERDA
+   ========================================================= */
+
+.lateral-esquerda::after {
+    right: 0;
+
+    background: linear-gradient(
+        to right,
+
+        rgba(0, 0, 0, 0) 0%,
+
+        rgba(0, 0, 0, 0.10) 25%,
+
+        rgba(0, 0, 0, 0.30) 50%,
+
+        rgba(0, 0, 0, 0.65) 72%,
+
+        rgba(155, 5, 5, 0.85) 88%,
+
+        rgba(155, 5, 5, 0.98) 100%
+    );
+}
+
+
+/* =========================================================
+   FADE LATERAL DIREITA
+   ========================================================= */
+
+.lateral-direita::after {
+    left: 0;
+
+    background: linear-gradient(
+        to left,
+
+        rgba(0, 0, 0, 0) 0%,
+
+        rgba(0, 0, 0, 0.10) 25%,
+
+        rgba(0, 0, 0, 0.30) 50%,
+
+        rgba(0, 0, 0, 0.65) 72%,
+
+        rgba(155, 5, 5, 0.85) 88%,
+
+        rgba(155, 5, 5, 0.98) 100%
+    );
+}
+
+
+/* =========================================================
+   SITE CENTRAL
+   ========================================================= */
+
+.tabela-central {
+    width: 1200px;
+
+    margin: 0 auto;
+
+    border-collapse: collapse;
+
+    background: #000000;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   BANNER
+   ========================================================= */
+
+.banner-principal {
+    display: block;
+
+    width: 1200px;
+    height: 700px;
+
+    object-fit: cover;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+}
+
+
+/* =========================================================
+   MENU HORIZONTAL
+   ========================================================= */
+
+.tabela-central td.coluna-menu {
+
+    width: 1200px !important;
+
+    display: block;
+
+    padding: 0;
+
+    margin: 0;
+
+    background: #000000;
+
+    text-align: center;
+
+    /*
+       LINHA VERMELHA ENTRE O BANNER E O MENU
+    */
+    border-top: 3px solid #e20e0e;
+
+    /*
+       Linha inferior discreta
+    */
+    border-bottom: 1px solid #5c0909;
+
+    /*
+       Pequeno brilho vermelho
+    */
+    box-shadow:
+        0 -3px 10px rgba(226, 14, 14, 0.25),
+        0 3px 10px rgba(226, 14, 14, 0.10);
+}
+
+
+/* =========================================================
+   REMOVE O TÍTULO "MENU"
+   ========================================================= */
+
+.titulo-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.nav-menu {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 0;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   OPÇÕES DO MENU
+   ========================================================= */
+
+.link-menu {
+
+    display: block;
+
+    padding: 17px 35px;
+
+    color: #ffffff;
+
+    background: #000000;
+
+    text-decoration: none;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    border-left: 1px solid #260000;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   ÚLTIMA DIVISÃO
+   ========================================================= */
+
+.link-menu:last-child {
+    border-right: 1px solid #260000;
+}
+
+
+/* =========================================================
+   HOVER DO MENU
+   ========================================================= */
+
+.link-menu:hover {
+
+    color: #ffffff;
+
+    background: #190000;
+
+    box-shadow:
+        inset 0 -3px 0 #e20e0e,
+        0 0 12px rgba(226, 14, 14, 0.25);
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.tabela-central td.coluna-conteudo {
+
+    display: block;
+
+    width: 1200px !important;
+
+    min-height: 500px;
+
+    padding: 35px 45px;
+
+    background: #000000;
+
+    color: #ffffff;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    vertical-align: top;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+.titulo-conteudo {
+
+    margin: 0 0 20px 0;
+
+    color: #ffffff;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.subtitulo-conteudo {
+
+    margin-top: 30px;
+
+    color: #ffffff;
+
+    font-size: 26px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.texto-conteudo {
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    margin: 0 0 20px 0;
+}
+
+
+/* =========================================================
+   IMAGENS DO CONTEÚDO
+   ========================================================= */
+
+.imagem-conteudo {
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    margin: 25px auto;
+
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   LINKS DOS TRABALHOS
+   ========================================================= */
+
+.link-trabalho {
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-bottom: 2px solid #e20e0e;
+
+    padding-bottom: 3px;
+
+    transition: 0.2s ease;
+}
+
+
+.link-trabalho:hover {
+
+    color: #e20e0e;
+
+    border-bottom-color: #ffffff;
+}
+
+
+/* =========================================================
+   VÍDEOS
+   ========================================================= */
+
+.video-responsivo {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    padding-top: 50.625%;
+
+    margin: 25px auto;
+}
+
+
+.video-responsivo iframe {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
     border: 0;
+
     border-radius: 4px;
 }
- 
-/* ===================================================================
+
+
+/* =========================================================
    RODAPÉ
-   =================================================================== */
+   ========================================================= */
+
 .rodape {
-    width: 1200px;
+
+    display: block;
+
+    width: 1200px !important;
+
     height: 120px;
-    background: linear-gradient(180deg, #eed80f 0%, #a38606 100%);
- 
-    border-top: 1px solid #1a3550;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.35);
- 
+
+    padding: 20px;
+
+    background: linear-gradient(
+        180deg,
+        #af2f08 0%,
+        #420503 100%
+    );
+
+    border-top: 2px solid #e20e0e;
+
+    box-shadow:
+        0 -5px 15px rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+
     font-family: sans-serif;
-    color: #000000;
-    font-size: 13px;
+
+    font-size: 11px;
+
+    color: #ffffff;
 }
- 
+
+
 .rodape-texto {
+
     margin: 6px 0;
-    letter-spacing: 0.5px;
-    color: #000000;
+
+    color: #ffffff;
+
+    letter-spacing: 0.3px;
 }
- 
- 
-/* ===================================================================
-   RESPONSIVIDADE MOBILE
-   Ativa em telas de 900px ou menos (tablets e celulares)
-   =================================================================== */
-@media (max-width: 900px) {
- 
-    .tabela-principal,
-    .coluna-central,
-    .tabela-central {
-        width: 100% !important;
-        min-width: 0 !important;
-    }
- 
-    .lateral-esquerda,
-    .lateral-direita {
+
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+
+
+
+/* =========================================================
+   CORREÇÃO DAS TABLES
+   ========================================================= */
+
+.tabela-central > tbody > tr {
+
+    display: block;
+
+    width: 1200px;
+}
+
+
+.tabela-central > tbody > tr > td {
+
+    vertical-align: top;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .lateral {
         display: none;
     }
- 
-    .banner-principal {
+
+    .coluna-central,
+    .tabela-central {
+
         width: 100% !important;
+
+        min-width: 0 !important;
+    }
+
+    .banner-principal {
+
+        width: 100% !important;
+
         height: auto !important;
     }
- 
-    .tabela-central tr,
-    .tabela-central td {
-        display: block;
+
+    .tabela-central > tbody > tr {
+
+        width: 100%;
+    }
+
+    .tabela-central td.coluna-menu {
+
         width: 100% !important;
     }
- 
-    .coluna-menu {
+
+    .tabela-central td.coluna-conteudo {
+
         width: 100% !important;
-        padding: 10px 0;
     }
- 
-    .nav-menu {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        padding-top: 8px;
+
+    .rodape {
+
+        width: 100% !important;
     }
- 
+
     .link-menu {
-        padding: 8px 12px;
+
+        padding: 14px 18px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .nav-menu {
+
+        flex-direction: column;
+    }
+
+    .link-menu {
+
+        width: 100%;
+
         border-left: none;
-        border-bottom: 3px solid transparent;
+
+        border-right: none;
+
+        border-bottom: 1px solid #260000;
+
+        padding: 14px;
     }
- 
-    .link-menu:hover {
-        padding-left: 12px;
-        border-left: none;
-        border-bottom-color: #e20e0e;
+
+    .tabela-central td.coluna-conteudo {
+
+        padding: 25px 20px;
     }
- 
-    .coluna-conteudo {
-        width: 100% !important;
-        padding: 16px;
-    }
- 
+
     .titulo-conteudo {
+
         font-size: 26px;
     }
- 
+
     .subtitulo-conteudo {
-        font-size: 20px;
-    }
- 
-    .texto-conteudo {
-        font-size: 15px;
-        line-height: 1.5;
-    }
- 
-    .rodape {
-        height: auto !important;
-        padding: 16px 10px;
-    }
- 
-    .rodape-texto {
-        font-size: 12px;
-    }
- 
-    .topbar {
-        position: static;
-        width: 100%;
-        justify-content: center;
-        border-radius: 0;
-        padding: 10px;
-    }
-}
- 
-@media (max-width: 400px) {
-    .btn-topbar {
-        font-size: 13px;
-        padding: 8px 14px;
-    }
- 
-    .titulo-conteudo {
+
         font-size: 22px;
     }
- 
-    .subtitulo-conteudo {
-        font-size: 18px;
+
+    .texto-conteudo {
+
+        font-size: 16px;
     }
+
 }
- 
+/* =========================================================
+   ARASAKA LOVE CALCULATOR
+   ========================================================= */
+
+.love-page {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    padding: 60px 20px 110px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(155, 5, 5, 0.10) 0%,
+            rgba(0, 0, 0, 0.95) 55%,
+            #000000 100%
+        );
+
+    color: #ffffff;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* linhas decorativas */
+
+.love-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: #9b0505;
+
+    box-shadow:
+        0 0 10px rgba(155, 5, 5, 0.8),
+        0 0 30px rgba(155, 5, 5, 0.35);
+
+}
+
+
+.love-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: #9b0505;
+
+    box-shadow:
+        0 0 10px rgba(155, 5, 5, 0.8);
+
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.love-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    padding: 45px 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 18, 18, 0.98),
+            rgba(3, 3, 3, 0.98)
+        );
+
+    border: 2px solid #9b0505;
+
+    box-shadow:
+
+        0 0 0 1px rgba(155, 5, 5, 0.35),
+
+        0 0 20px rgba(155, 5, 5, 0.45),
+
+        inset 0 0 30px rgba(155, 5, 5, 0.05);
+
+    position: relative;
+
+}
+
+
+/* cantos tecnológicos */
+
+.love-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -2px;
+    left: -2px;
+
+    width: 90px;
+    height: 20px;
+
+    border-top: 3px solid #e20e0e;
+    border-left: 3px solid #e20e0e;
+
+}
+
+
+.love-container::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -2px;
+    right: -2px;
+
+    width: 90px;
+    height: 20px;
+
+    border-bottom: 3px solid #e20e0e;
+    border-right: 3px solid #e20e0e;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.love-header {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.arasaka-symbol {
+
+    color: #e20e0e;
+
+    font-size: 34px;
+
+    margin-bottom: 5px;
+
+    text-shadow:
+        0 0 8px rgba(226, 14, 14, 0.8);
+
+}
+
+
+.love-header h1 {
+
+    margin: 0;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #ffffff;
+
+}
+
+
+.love-header p {
+
+    margin: 8px 0 0;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #9b9b9b;
+
+}
+
+
+.red-line {
+
+    width: 180px;
+
+    height: 2px;
+
+    margin: 18px auto 0;
+
+    background: #e20e0e;
+
+    box-shadow:
+        0 0 8px rgba(226, 14, 14, 0.7);
+
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.love-form {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+}
+
+
+.name-field {
+
+    width: 100%;
+
+    position: relative;
+
+}
+
+
+.name-field label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #e20e0e;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.name-field input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    background: #080808;
+
+    color: #ffffff;
+
+    border: 1px solid #5c0909;
+
+    border-radius: 3px;
+
+    outline: none;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.name-field input:focus {
+
+    border-color: #e20e0e;
+
+    box-shadow:
+        0 0 10px rgba(226, 14, 14, 0.25);
+
+}
+
+
+.name-field input::placeholder {
+
+    color: #555555;
+
+}
+
+
+.char-count {
+
+    position: absolute;
+
+    right: 10px;
+
+    bottom: -20px;
+
+    color: #666666;
+
+    font-size: 12px;
+
+}
+
+
+.love-symbol {
+
+    margin-top: 25px;
+
+    color: #e20e0e;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 10px rgba(226, 14, 14, 0.6);
+
+}
+
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+.love-button {
+
+    display: block;
+
+    width: 100%;
+
+    margin: 45px auto 0;
+
+    padding: 15px;
+
+    background: #9b0505;
+
+    color: #ffffff;
+
+    border: 1px solid #e20e0e;
+
+    border-radius: 3px;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+}
+
+
+.love-button:hover {
+
+    background: #e20e0e;
+
+    box-shadow:
+        0 0 15px rgba(226, 14, 14, 0.55);
+
+}
+
+
+/* =========================================================
+   RESULTADO
+   ========================================================= */
+
+.love-result {
+
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #420505;
+
+}
+
+
+.love-result h2 {
+
+    margin: 0 0 25px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   VALORES
+   ========================================================= */
+
+.names-result {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        100px
+        1fr
+        100px;
+
+    gap: 10px;
+
+    align-items: center;
+
+}
+
+
+.names-result div {
+
+    padding: 12px;
+
+    background: #080808;
+
+    border: 1px solid #260000;
+
+    text-align: center;
+
+}
+
+
+.names-result span {
+
+    display: block;
+
+    color: #777777;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.names-result strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================================================
+   PROBABILIDADE
+   ========================================================= */
+
+.probability-area {
+
+    margin-top: 30px;
+
+}
+
+
+.probability-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+
+    color: #aaaaaa;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.probability-top strong {
+
+    color: #e20e0e;
+
+    font-size: 22px;
+
+}
+
+
+/* barra */
+
+.probability-bar {
+
+    width: 100%;
+
+    height: 22px;
+
+    padding: 3px;
+
+    background: #050505;
+
+    border: 1px solid #4a0909;
+
+}
+
+
+.probability-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5c0505,
+            #9b0505,
+            #e20e0e
+        );
+
+    box-shadow:
+        0 0 10px rgba(226, 14, 14, 0.65);
+
+    transition:
+        width 0.8s ease;
+
+}
+
+
+/* =========================================================
+   MENSAGEM
+   ========================================================= */
+
+.result-message {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background: rgba(155, 5, 5, 0.08);
+
+    border-left: 3px solid #e20e0e;
+
+    border-right: 3px solid #e20e0e;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   VOLTAR
+   ========================================================= */
+
+.back-home {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 11px 25px;
+
+    color: #ffffff;
+
+    background: #9b0505;
+
+    border: 1px solid #e20e0e;
+
+    text-decoration: none;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.back-home:hover {
+
+    background: #e20e0e;
+
+    box-shadow:
+        0 0 12px rgba(226, 14, 14, 0.65);
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .love-page {
+
+        padding:
+            30px 15px 100px;
+
+    }
+
+
+    .love-container {
+
+        padding:
+            35px 20px;
+
+    }
+
+
+    .love-header h1 {
+
+        font-size: 27px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .love-form {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .love-symbol {
+
+        margin: 0;
+
+        transform: rotate(90deg);
+
+    }
+
+
+    .names-result {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .names-result div:nth-child(3) {
+
+        grid-column: 1;
+
+    }
+
+
+    .names-result div:nth-child(4) {
+
+        grid-column: 2;
+
+    }
+
+}
